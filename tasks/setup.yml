@@ -8,6 +8,11 @@
     cache_valid_time: 86400
   with_items: "{{ s3fs.dependencies }}"
 
+- name: Output s3fs var
+  debug:
+    var: s3fs
+    verbosity: 1
+
 - name: Download s3fs source
   get_url:
     url: "{{ s3fs.source }}"
