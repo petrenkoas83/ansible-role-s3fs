@@ -2,11 +2,10 @@
 - name: Make sure s3fs dependencies are present
   become: yes
   apt:
-    name: "{{ item }}"
+    name: "{{ s3fs.dependencies }}"
     state: present
     update_cache: yes
     cache_valid_time: 86400
-  with_items: "{{ s3fs.dependencies }}"
 
 - name: Output s3fs var
   debug:
